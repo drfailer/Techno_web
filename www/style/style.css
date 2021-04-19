@@ -11,7 +11,7 @@ body {
 {
   height: 85px;
   width: 100%;
-  max-width: 300;
+  max-width: 300px;
   top: 0;
   left: 0;
   border-right: 2px #1E2127 solid;
@@ -131,7 +131,12 @@ main[class="formulaire"] {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
 
 main h1 {
   font-size: 250%;

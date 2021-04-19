@@ -24,27 +24,27 @@
     </header>
 
     <main class="formulaire">
+        <form id="form" method="post" action="/../htbin/register.py">
+            <label for="nom">nom:</label>
+            <input name="lastname" id="nom" class="obligatoire">
 
-        <label for="nom">nom:</label>
-        <input id="nom" class="obligatoire">
+            <label for="prenom">prenom:</label>
+            <input name="firstname" id="prenom" class="obligatoire">
 
-        <label for="prenom">prenom:</label>
-        <input id="prenom" class="obligatoire">
+            <label for="date">date:</label>
+            <input name="birthdate" id="date">
 
-        <label for="date">date:</label>
-        <input type="date" id="date">
+            <label for="pseudonyme">pseudonyme:</label>
+            <input name="username" id="pseudonyme" class="obligatoire">
 
-        <label for="pseudonyme">pseudonyme:</label>
-        <input id="pseudonyme" class="obligatoire">
+            <label for="password">password:</label>
+            <input name="userpwd" type="password" id="mdp" class="obligatoire">
 
-        <label for="password">password:</label>
-        <input type="password" id="mdp" class="obligatoire">
+            <label for="adresse">addresse:</label>
+            <input name="useremail" id="adresse" class="obligatoire">
 
-        <label for="adresse">addresse:</label>
-        <input id="adresse" class="obligatoire">
-
-        <input type="submit" id="valider">
-
+            <input type="submit" id="valider">
+        </form>
     </main>
 
     <footer>
