@@ -20,8 +20,7 @@ var input_correct = {
 var messages_input_incorrect = {
     "nom": "",
     "prenom": "",
-    "date": "",
-    "spe_date": "La date doit s'écrire comme ceci : jj/mm/aaaa.",
+    "spe_date": "",
     "pseudonyme": "",
     "spe_pseudonyme": "Le pseudonyme doit faire au moins 6 caractères.",
     "mdp": "",
@@ -56,11 +55,11 @@ input_pseudo.addEventListener('input', function(e) {
     e.stopPropagation();
     if (input_pseudo.value.length < 6) {
         input_pseudo.style.backgroundColor = "#FF0000";
-        input_correct[input_pseudo.id] = false;
+        input_correct["pseudonyme"] = false;
         messages_input_incorrect["spe_pseudonyme"] = "Le pseudonyme doit faire au moins 6 caractères.";
     } else {
         input_pseudo.style.backgroundColor = "#FFFFFF";
-        input_correct[input_pseudo.id] = true;
+        input_correct["pseudonyme"] = true;
         messages_input_incorrect["spe_pseudonyme"] = ""
     }
 
@@ -70,11 +69,11 @@ input_mdp.addEventListener('input', function(e) {
     e.stopPropagation();
     if (!input_mdp.value.match(/(?=.*[a-z]+.*)(?=.*[0-9]+.*)(?=.*[A-Z]+.*)[^\s]{8,}/)) {
         input_mdp.style.backgroundColor = "#FF0000";
-        input_mdp[input_pseudo.id] = false;
+        input_correct["mdp"] = false;
         messages_input_incorrect["spe_mdp"] = "Le mot de passe doit contenir une minuscule, une majuscule, un chiffre et faire avoir au moins 8 caractères.";
     } else {
         input_mdp.style.backgroundColor = "#FFFFFF";
-        input_mdp[input_pseudo.id] = true;
+        input_correct["mdp"] = true;
         messages_input_incorrect["spe_mdp"] = ""
     }
 
@@ -84,11 +83,11 @@ input_adresse.addEventListener('input', function(e) {
     e.stopPropagation();
     if (!input_adresse.value.match(/.+@.+\..+/)) {
         input_adresse.style.backgroundColor = "#FF0000";
-        input_adresse[input_pseudo.id] = false;
+        input_correct["adresse"] = false;
         messages_input_incorrect["spe_adresse"] = "L'adresse doit s'écrire comme ceci : x@x.x .";
     } else {
         input_adresse.style.backgroundColor = "#FFFFFF";
-        input_adresse[input_pseudo.id] = true;
+        input_correct["adresse"] = true;
         messages_input_incorrect["spe_adresse"] = ""
     }
 
@@ -99,18 +98,20 @@ input_date.addEventListener('input', function(e) {
     let array_date = input_date.value.split("/");
 
     input_date.style.backgroundColor = "#FF0000";
+    messages_input_incorrect["spe_date"] = "La date doit s'écrire comme ceci : jj/mm/aaaa.";
+    input_correct["date"] = false;
     if (array_date[2] != undefined && array_date[2].length == 4) {
         let date = new Date(array_date[2], array_date[1], array_date[0]);
         if (!isNaN(date)) {
             input_date.style.backgroundColor = "#FFFFFF";
-            messages_input_incorrect["date"] = "";
+            messages_input_incorrect["spe_date"] = "";
+            input_correct["date"] = true;
         }
 
     } else if (input_date.value.length == 0) {
         input_date.style.backgroundColor = "#FFFFFF";
-        messages_input_incorrect["date"] = "";
-    } else {
-        messages_input_incorrect["date"] = "La date doit s'écrire comme ceci : jj/mm/aaaa.";
+        messages_input_incorrect["spe_date"] = "";
+        input_correct["date"] = true;
     }
 }, false)
 
@@ -120,6 +121,7 @@ input_valider.addEventListener('click', function(e) {
     for (let b in input_correct) {
         if (input_correct[b] === false) {
             formulaireComplet = false;
+            console.log(b);
         }
     }
     if (formulaireComplet == true) {
