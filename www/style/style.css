@@ -129,8 +129,7 @@ main[class="formulaire"] {
     width: 65%;
     margin-left: 17.5%;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: 1%;
 }
 
 form {
