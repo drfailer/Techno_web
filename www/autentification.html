@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" media="all" href="./style/base.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="./style/style.css" />
+
+    <meta name="author" content="Cliquot Théo, Chassagnol Rémi" />
+    <meta name="keywords" content="test,html" />
+    <meta name="description" content="Formulaire pour la connection de l'utilisateur au site." />
+
+    <title>Connection</title>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="formulaire">Formulaire</h1>
+    </header>
+
+    <main class="formulaire">
+
+        <form id="form" method="post" action="../htbin/register.py">
+            <label for="pseudonyme">pseudonyme:</label>
+            <input name="username" id="pseudonyme">
+
+            <label for="password">password:</label>
+            <input name="userpwd" type="password" id="mdp">
+
+            <input type="submit" id="se connecter">
+        </form>
+        <p id="text_err_connection"></p>
+
+        <a href="./formulaire.html" target="_self">Formulaire d'inscription</a>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+<script type="text/javascript" src="script/formulaire.js"></script>
+<script type="text/javascript" src="script/autentification.js"></script>
+
+</html>

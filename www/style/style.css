@@ -65,6 +65,28 @@ nav[class="table-of-content"] a:visited
   color : #51afef;
 }
 
+
+/* Bouton connection */
+
+a.connection-button {
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.16);
+  background-color: #222bbc;
+  padding: 2px 2px 2px 2px;
+  display: flex;
+  justify-content: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 5%;
+  min-width: 40%;
+}
+
+a.connection-button:hover {
+  background-color: #464dbf;
+}
+
+
 /* Access to other pages */
 
 aside
@@ -72,7 +94,7 @@ aside
   width: 100%;
   margin-top: 1%;
   margin-bottom: 1%;
-  border: 1px #000000 solid;
+  box-shadow: 0 3px 5px 1px rgba(64, 60, 67, 0.16);
 }
 
 aside nav
@@ -94,7 +116,7 @@ aside a
   display: flex;
   justify-content: center;
   width: 50%;
-  border-right: solid 2px rgb(49, 52, 64);
+  border: solid 1px rgb(49, 52, 64);
 }
 
 #right-link
@@ -356,6 +378,22 @@ label {
     width: 66.5%;
     margin-left: 27%;
   }
+
+  #connection-nav {
+    color: white;
+  }
+
+  #inscription-nav {
+    color: white;
+  }
+
+  #connection-head {
+    display: none;
+  }
+
+  #inscription-head {
+    display: none;
+  }
 }
 
 @media (max-width:65em) {
@@ -386,5 +424,23 @@ label {
     justify-content: center;
     margin-left: 0;
     margin-top: 0;
+  }
+
+  .head-button {
+    display: block;
+    margin-top: 0;
+    color: white;
+  }
+  
+  #connection-head {
+    margin-top: 0;
+    color: white;
+    text-decoration: none;
+  }
+
+  #inscription-head {
+    margin-top: 0;
+    color: white;
+    text-decoration: none;
   }
 }
