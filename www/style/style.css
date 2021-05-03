@@ -140,8 +140,7 @@ div.link-form {
   background-color: #adb1c6;
 }
 
-#left-link:hover
-{
+#left-link:hover {
   background-color: #adb1c6;
 }
 
@@ -169,8 +168,9 @@ form {
 }
 
 p.form-err {
-  font-size: 120%;
+  font-size: 110%;
   font-weight: bold;
+  margin: 0;
 }
 
 main h1 {
@@ -399,11 +399,19 @@ label {
     color: white;
   }
 
+  #chatbox-nav {
+    color: white;
+  }
+
   #connection-head {
     display: none;
   }
 
   #inscription-head {
+    display: none;
+  }
+
+  #chatbox-head {
     display: none;
   }
 }
@@ -453,6 +461,13 @@ label {
   }
 
   #inscription-head {
+    margin-top: 0;
+    margin: 2px 2px 2px 2px;
+    color: white;
+    text-decoration: none;
+  }
+
+  #chatbox-head {
     margin-top: 0;
     margin-bottom: 2px;
     margin-left: 2px;

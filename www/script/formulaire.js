@@ -56,7 +56,7 @@ function test_obligatoire(el) {
 }
 
 for (let el of input_obligatoire) {
-    el.addEventListener('input', function (e) {
+    el.addEventListener('input', function () {
         test_obligatoire(el);
     }, true);
     test_obligatoire(el);
