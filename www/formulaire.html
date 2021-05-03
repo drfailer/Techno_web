@@ -28,25 +28,33 @@
         <form id="form" method="post" action="../htbin/register.py">
             <label for="nom">nom:</label>
             <input name="lastname" id="nom" class="obligatoire">
+            <p id="text_err_nom" class="form-err"></p>
 
             <label for="prenom">prenom:</label>
             <input name="firstname" id="prenom" class="obligatoire">
+            <p id="text_err_prenom" class="form-err"></p>
 
             <label for="date">date:</label>
             <input name="birthdate" id="date">
+            <p id="text_err_date" class="form-err"></p>
 
             <label for="pseudonyme">pseudonyme:</label>
             <input name="username" id="pseudonyme" class="obligatoire">
+            <p id="text_err_pseudo" class="form-err"></p>
+            <p id="text_err_spe_pseudo" class="form-err"></p>
 
             <label for="password">password:</label>
             <input name="userpwd" type="password" id="mdp" class="obligatoire">
+            <p id="text_err_passwd" class="form-err"></p>
+            <p id="text_err_spe_passwd" class="form-err"></p>
 
             <label for="adresse">addresse:</label>
             <input name="useremail" id="adresse" class="obligatoire">
+            <p id="text_err_mail" class="form-err"></p>
+            <p id="text_err_spe_mail" class="form-err"></p>
 
             <input type="submit" id="valider">
         </form>
-        <p id="text_err"></p>
 
     </main>
 
