@@ -22,10 +22,10 @@
   <header>
     <h1>Présentation prép'ISIMA</h1>
     <h2>prépa intégrée à l'école d'ingénieur d'ISIMA</h2>
-    <a id="connection-head" class="connection-button head-button" href="./autentification.html"
-      target="_self">connection</a>
-    <a id="inscription-head" class="connection-button head-button" href="./formulaire.html"
-      target="_self">inscription</a>
+    <div class="head-button">
+      <a id="connection-head" class="connection-button" href="./autentification.html" target="_self">connection</a>
+      <a id="inscription-head" class="connection-button" href="./formulaire.html" target="_self">inscription</a>
+    </div>
   </header>
 
   <main>
@@ -190,8 +190,10 @@
       <li><a href="#imagerie" target="_self">Introduction à l'imagerie</a></li>
       <li><a href="#dev-lin" target="_self">Atelier de développement Linux</a></li>
     </ul>
-    <a id="connection-nav" class="connection-button" href="./autentification.html" target="_self">connection</a>
-    <a id="inscription-nav" class="connection-button" href="./formulaire.html" target="_self">inscription</a>
+    <div class="noDisplayIfLogged">
+      <a id="connection-nav" class="connection-button" href="./autentification.html" target="_self">connection</a>
+      <a id="inscription-nav" class="connection-button" href="./formulaire.html" target="_self">inscription</a>
+    </div>
   </nav>
 
   <aside>
@@ -201,5 +203,6 @@
     </nav>
   </aside>
 </body>
+<script type="text/javascript" src="script/login.js"></script>
 
 </html>
