@@ -56,13 +56,13 @@ function test_obligatoire(el) {
 }
 
 for (let el of input_obligatoire) {
-    el.addEventListener('input', function () {
+    el.addEventListener('input', function() {
         test_obligatoire(el);
     }, true);
     test_obligatoire(el);
 }
 
-input_pseudo.addEventListener('input', function (e) {
+input_pseudo.addEventListener('input', function(e) {
     e.stopPropagation();
     if (input_pseudo.value.length < 6) {
         input_pseudo.style.backgroundColor = "#FF0000";
@@ -76,7 +76,7 @@ input_pseudo.addEventListener('input', function (e) {
 
 }, false)
 
-input_mdp.addEventListener('input', function (e) {
+input_mdp.addEventListener('input', function(e) {
     e.stopPropagation();
     if (!input_mdp.value.match(/(?=.*[a-z]+.*)(?=.*[0-9]+.*)(?=.*[A-Z]+.*)[^\s]{8,}/)) {
         input_mdp.style.backgroundColor = "#FF0000";
@@ -90,7 +90,7 @@ input_mdp.addEventListener('input', function (e) {
 
 }, false)
 
-input_adresse.addEventListener('input', function (e) {
+input_adresse.addEventListener('input', function(e) {
     e.stopPropagation();
     if (!input_adresse.value.match(/.+@.+\..+/)) {
         input_adresse.style.backgroundColor = "#FF0000";
@@ -104,7 +104,7 @@ input_adresse.addEventListener('input', function (e) {
 
 }, false)
 
-input_date.addEventListener('input', function (e) {
+input_date.addEventListener('input', function(e) {
     e.stopPropagation();
     let array_date = input_date.value.split("/");
 
@@ -126,7 +126,7 @@ input_date.addEventListener('input', function (e) {
     }
 }, false)
 
-input_valider.addEventListener('click', function (e) {
+input_valider.addEventListener('click', function(e) {
     e.preventDefault();
     let formulaireComplet = true;
     for (let b in input_correct) {
