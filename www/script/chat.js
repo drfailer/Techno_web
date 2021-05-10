@@ -1,6 +1,6 @@
 var entree_message = document.getElementById("entree-message");
 var sortie_message = document.getElementById("affichage-message");
-var erreur_message = document.getElementById("erreur-message");
+var resultat_message = document.getElementById("resultat-message");
 var submit = document.getElementById("submit-message");
 
 function reload_messagerie() {
@@ -9,20 +9,19 @@ function reload_messagerie() {
         'false',
         function (data) {
             retour_get_message(data);
-        }, // Nous renseignons uniquement le nom de la fonction de retour.
-        'json' // Format des données reçues.
+        },
+        'json'
     );
 }
 
-setInterval("reload_messagerie()", 10000);
+
 
 function retour_get_message(data) {
-    console.log(data);
     sortie_message.innerHTML = "";
-    for (let m in data) {
+    for (let i = data.length - 1; i >= 0; i--) {
         sortie_message.innerHTML += `<ul id="message-list">` +
-            `<li id="message-head">` + data[m].user + ": " + data[m].date + " " + data[m].time + `</li>` +
-            `<li id="message-content">` + data[m].msg + `</li>` +
+            `<li id="message-head">` + data[i].user + ": " + data[i].date + " " + data[i].time + `</li>` +
+            `<li id="message-content">` + data[i].msg + `</li>` +
             `</ul>`
     }
 }
@@ -30,27 +29,29 @@ function retour_get_message(data) {
 submit.addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
-    console.log("coucou");
     $.post(
         '../htbin/chatsend.py', // Le fichier cible côté serveur.
         {
-            msg: entree_message.value // Nous supposons que ce formulaire existe dans le DOM.
+            msg: entree_message.value
         },
         function (data) {
             retour_post_message(data)
-        }, // Nous renseignons uniquement le nom de la fonction de retour.
+        },
 
     );
 
     function retour_post_message(texte_recu) {
-        console.log(texte_recu);
         if (texte_recu.num == 1) {
-            erreur_message.innerHTML = "Aucun message fournie <br/>" + texte_recu[msg]
+            resultat_message.innerHTML = "Aucun message fournie <br/>"
         } else if (texte_recu.num == -1) {
-            erreur_message.innerHTML = "Erreur utilisateur invalide <br/>" + texte_recu[msg]
+            resultat_message.innerHTML = "Erreur utilisateur invalide <br/>"
         } else {
-            sortie_message.innerHTML = "<p>" + texte_recu.msg + "</p>";
+            resultat_message.innerHTML = texte_recu.msg;
+            reload_messagerie();
         }
     }
 
 })
+
+reload_messagerie();
+setInterval("reload_messagerie()", 10000);

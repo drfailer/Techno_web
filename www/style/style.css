@@ -4,6 +4,27 @@ body {
   background-color: #e5e9f0;
 }
 
+/* footer */
+
+footer {
+  background-color: #cdcdd1;
+  width: 100%;
+  border-top: 1px #1E2127 solid;
+  box-shadow: 0 3px 5px 1px rgba(54, 50, 57, 0.16);
+  padding-bottom: 5px;
+}
+
+div.footer-links {
+  columns: 3;
+}
+
+footer ul {
+  list-style-type: none;
+  height: 10px;
+  width: 60%;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
 
 /* Table of content */
 
@@ -200,8 +221,7 @@ main h4 {
 
 /* Header */
 
-header
-{
+header {
   background-color: #353941;
   width: 100%;
   border-bottom: 2px #1E2127 solid;
@@ -226,6 +246,14 @@ header h2 {
 
 header h1[class="formulaire"] {
   margin-left: 0;
+}
+
+header noscript {
+  color: #c2c2c2;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-left: 20%;
 }
 
 /* article */
@@ -364,9 +392,10 @@ label {
 
 /* Chat */
 
-div.affichage-message {
-  border: 1px solid black;
-  padding: 2px 2px 2px 2px;
+#affichage-message {
+    height: 300px;
+    max-height: 20%;
+    overflow-y: auto;
 }
 
 ul#message-list {
@@ -440,6 +469,14 @@ label#label-message {
   #chatbox-head {
     display: none;
   }
+  
+  div.footer-links {
+    margin-left: 22%;
+  }
+
+  footer p {
+    margin-left: 22%;
+  }
 }
 
 @media (max-width:65em) {
@@ -476,14 +513,15 @@ label#label-message {
     justify-content: center;
     margin: auto;
     width: 60%;
+    padding: 5px 5px 5px 5px;
   }
   
   #connection-head {
     margin-top: 0;
-    margin-bottom: 2px;
-    margin-right: 2px;
+    margin: 2px 2px 2px 2px;
     color: white;
     text-decoration: none;
+    padding: 1px 1px 1px 1px;
   }
 
   #inscription-head {
@@ -491,13 +529,18 @@ label#label-message {
     margin: 2px 2px 2px 2px;
     color: white;
     text-decoration: none;
+    padding: 1px 1px 1px 1px;
   }
 
   #chatbox-head {
     margin-top: 0;
-    margin-bottom: 2px;
-    margin-left: 2px;
+    margin: 2px 2px 2px 2px;
     color: white;
     text-decoration: none;
+    padding: 1px 1px 1px 1px;
+  }
+
+  div.footer-links {
+    margin-left: 20px;
   }
 }
