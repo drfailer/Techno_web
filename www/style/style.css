@@ -362,6 +362,32 @@ label {
   font-size: 120%;
 }
 
+/* Chat */
+
+div.affichage-message {
+  border: 1px solid black;
+  padding: 2px 2px 2px 2px;
+}
+
+ul#message-list {
+  list-style-type: none;
+  border: 1px solid black;
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 5px 5px 5px 5px;
+  margin-left: 15px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+li#message-head {
+  font-size: 60%;
+}
+
+label#label-message {
+  margin-top: 20px;
+}
+
 /* Media queries */
 
 @media (min-width:65em) {

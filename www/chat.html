@@ -20,13 +20,15 @@
 <body>
 
     <header>
-        <h1 class="Chat">Chat</h1>
+        <h1 class="formulaire">Chat</h1>
     </header>
 
     <main class="formulaire">
 
         <div id="affichage-message"></div>
-        <textarea id="entree-message">Enter your message here</textarea>
+        <!--<textarea id="entree-message">Enter your message here</textarea>-->
+        <label for="entree-message" id="label-message">Envoyer un message:</label>
+        <input type="text" id="entree-message">
         <input type="button" id="submit-message" value="envoyer message" />
         <p id=" erreur-message "></p>
     </main>
